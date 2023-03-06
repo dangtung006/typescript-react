@@ -13,6 +13,7 @@ import { LoggedIn } from "./pages/login";
 import { User } from "./pages/user";
 import { Private } from "./pages/auth/private";
 import { Profile } from './pages/auth/profile';
+import { List } from './pages/list';
 
 function App() {
     const people = [
@@ -49,6 +50,19 @@ function App() {
 
 
             <Private  isLoggedIn={false} Component={Profile}/>
+
+            <List 
+                items={
+                    [
+                        {
+                            id : 0,
+                            first : "tung",
+                            last : "dang"
+                        }
+                    ]
+                }
+                onClick={(item)=> console.log(item)}
+            />
 
 
         </div>
