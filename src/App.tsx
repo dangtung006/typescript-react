@@ -15,8 +15,8 @@ import './App.css';
 // import { Profile } from './pages/auth/profile';
 // import { List } from './pages/list';
 
-import { Add } from "./persons/add";
-import List from "./persons/list";
+// import { Add } from "./persons/add";
+// import List from "./persons/list";
 
 function App() {
     // const people = [
@@ -67,8 +67,11 @@ function App() {
                 onClick={(item)=> console.log(item)}
             /> */}
 
-            <Add />
-            <List />
+            {/* <Add />
+            <List /> */}
+
+
+            
         </div>
     );
 }
