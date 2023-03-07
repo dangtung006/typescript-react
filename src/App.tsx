@@ -9,23 +9,26 @@ import './App.css';
 // import { Input } from "./components/input";
 // import { Container } from "./components/container";
 
-import { LoggedIn } from "./pages/login";
-import { User } from "./pages/user";
-import { Private } from "./pages/auth/private";
-import { Profile } from './pages/auth/profile';
-import { List } from './pages/list';
+// import { LoggedIn } from "./pages/login";
+// import { User } from "./pages/user";
+// import { Private } from "./pages/auth/private";
+// import { Profile } from './pages/auth/profile';
+// import { List } from './pages/list';
+
+import { Add } from "./persons/add";
+import List from "./persons/list";
 
 function App() {
-    const people = [
-        {
-            first : "tony",
-            last : "Doan"
-        },
-        {
-            first : "Henry",
-            last : "Nguyen"
-        }
-    ];
+    // const people = [
+    //     {
+    //         first : "tony",
+    //         last : "Doan"
+    //     },
+    //     {
+    //         first : "Henry",
+    //         last : "Nguyen"
+    //     }
+    // ];
 
     return (
         <div className="App">
@@ -49,7 +52,7 @@ function App() {
             <User /> */}
 
 
-            <Private  isLoggedIn={false} Component={Profile}/>
+            {/* <Private  isLoggedIn={false} Component={Profile}/>
 
             <List 
                 items={
@@ -62,9 +65,10 @@ function App() {
                     ]
                 }
                 onClick={(item)=> console.log(item)}
-            />
+            /> */}
 
-
+            <Add />
+            <List />
         </div>
     );
 }
