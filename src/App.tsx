@@ -10,7 +10,7 @@ import { Route, Routes } from 'react-router-dom';
 // import { Input } from "./components/input";
 // import { Container } from "./components/container";
 
-import { LoggedIn } from "./pages/login";
+import { LogIn } from "./pages/login";
 // import { User } from "./pages/user";
 // import { Private } from "./pages/auth/private";
 // import { Profile } from './pages/auth/profile';
@@ -75,10 +75,10 @@ function App() {
 
             {/* <Add />
             <List /> */}
-            
+
             <Header />
             <Routes>
-                <Route path="/login" element={<LoggedIn />} />
+                <Route path="/login" element={<LogIn />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/users" element={<UserList />} />
                 <Route path="/user" element={<User />} />

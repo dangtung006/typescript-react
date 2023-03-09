@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../style/header.css';
 const header = () => {
     const headerLists = [
         {
@@ -8,21 +9,28 @@ const header = () => {
         {
             "title" : "Login",
             "href" : "/login",
+        },
+        {
+            "title" : "Users",
+            "href" : "/users",
         }
     ]
 
     return(
-        <ul>
-            {
-                headerLists.map(item=> {
-                    return(
-                        <li>
-                            <Link to={item.href}> {item.title}</Link>
-                        </li>
-                    )
-                })
-            }
-        </ul>
+        <div className="Header_Container">
+            <ul>
+                {
+                    headerLists.map(item=> {
+                        return(
+                            <li>
+                                <Link to={item.href}> {item.title}</Link>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+            <div>User</div>
+        </div>
     )
 }
 

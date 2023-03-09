@@ -1,22 +1,23 @@
 import { useState } from "react";
+import "../style/login.css"
 
-export const LoggedIn = () => {
-
-    const [isLoggedIn, setIsLoggedIn ] = useState(false);
-
-    const handleLogin = () => {
-        setIsLoggedIn(true);
-    };
-    
-    const handleLogOut = () => {
-        setIsLoggedIn(false);
-    };
+export const LogIn = () => {
 
     return(
         <div>
-            <button onClick={handleLogin}> Login</button>
-            <button onClick={handleLogOut}> Logout</button>
-            <div> User is { isLoggedIn ? "Logged In" : "Logged Out" } </div>
+            <form className="Form_login" onSubmit={(e)=> e.preventDefault}>
+                <div className="form-control">
+                    <label htmlFor="email">Email</label>
+                    <input type="text" name="email" />
+                </div>
+
+                <div className="form-control">
+                    <label htmlFor="password">Password</label>
+                    <input type="text" name="password" />
+                </div>
+                <button onClick={()=> console.log()}> Login</button>
+            </form>
+
         </div>
     )
 }
