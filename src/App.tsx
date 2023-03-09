@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
 // import { Greet } from "./components/greet";
 // import { People } from "./components/people";
 // import { Status } from "./components/status";
@@ -9,7 +10,7 @@ import './App.css';
 // import { Input } from "./components/input";
 // import { Container } from "./components/container";
 
-// import { LoggedIn } from "./pages/login";
+import { LoggedIn } from "./pages/login";
 // import { User } from "./pages/user";
 // import { Private } from "./pages/auth/private";
 // import { Profile } from './pages/auth/profile';
@@ -17,6 +18,11 @@ import './App.css';
 
 // import { Add } from "./persons/add";
 // import List from "./persons/list";
+
+import Header from './layouts/header';
+import { Home } from './pages/home';
+import { UserList } from './pages/userList';
+import { User } from './pages/user';
 
 function App() {
     // const people = [
@@ -69,8 +75,14 @@ function App() {
 
             {/* <Add />
             <List /> */}
-
-
+            
+            <Header />
+            <Routes>
+                <Route path="/login" element={<LoggedIn />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/users" element={<UserList />} />
+                <Route path="/user" element={<User />} />
+            </Routes>
             
         </div>
     );
