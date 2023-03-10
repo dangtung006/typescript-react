@@ -62,7 +62,32 @@ export const createBlog = createAsyncThunk(
 export const updateBlog = createAsyncThunk(
     "blog/update",
     async (updateBlog : any, apiThunk )=>{
+        const { data } = await axios.put<any>(
+            '',
+            updateBlog,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json',
+              },
+            },
+        );
+        return data;
+    }
+);
 
+export const removeBlog =  createAsyncThunk(
+    "blog/remove",
+    async(id : any, apiThunk) => {
+        const { data, status } = await axios.delete<any>(
+            'https://reqres.in/api/users/2',
+            {
+                headers: {
+                    Accept: 'application/json',
+                },
+            },
+        );
+        return data;
     }
 )
 
