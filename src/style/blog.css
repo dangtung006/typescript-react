@@ -1,0 +1,16 @@
+.Blog_Container {
+    margin : 0;
+    padding : 0;
+    width : 1200px;
+    margin : 0 auto;
+}
+.Blog_Container ul {
+    list-style: none;
+}
+
+.Blog_Container ul a {
+    text-decoration: none;
+    color : black;
+    display: inline-block;
+    padding: 2px;
+}

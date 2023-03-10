@@ -23,6 +23,7 @@ import Header from './layouts/header';
 import { Home } from './pages/home';
 import { UserList } from './pages/userList';
 import { User } from './pages/user';
+import { BlogDetail } from './pages/blogdetail';
 
 function App() {
     // const people = [
@@ -80,6 +81,7 @@ function App() {
             <Routes>
                 <Route path="/login" element={<LogIn />} />
                 <Route path="/" element={<Home />} />
+                <Route path="/blogdetail/:id" element={<BlogDetail />} />
                 <Route path="/users" element={<UserList />} />
                 <Route path="/user" element={<User />} />
             </Routes>

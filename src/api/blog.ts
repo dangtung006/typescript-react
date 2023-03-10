@@ -1,26 +1,39 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+interface blogDetailResponse {
+    id : number,
+    title : string,
+    body : string
+    userId : number,
+}
+
+interface blogsResponse {
+    data : blogDetailResponse[]
+}
+
 export const getBlogs = createAsyncThunk(
     "blog/get",
     async (apiThunk)=> {
-        try{
-            const result = await axios.get("", {
-                headers : {
-                    Accept: 'application/json',
-                },
-            })
-            return result;
-        }catch(err){
-            return "failed to load"
-        }
+        const { data, status } = await axios.get<blogsResponse>("https://jsonplaceholder.typicode.com/posts?_limit=10", {
+            headers : {
+                Accept: 'application/json',
+            },
+        })
+        return data;
     }
 );
 
 export const getBlogDetail = createAsyncThunk(
     "blog/id",
-    async () =>{
-
+    async (id : any , apiThunk) =>{
+        const { data, status } = await axios.get<blogDetailResponse>(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+            headers : {
+                Accept: 'application/json',
+            },
+        })
+        console.log("data : ", data);
+        return data;
     }
 );
 
